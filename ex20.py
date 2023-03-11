@@ -1,18 +1,24 @@
 
-### EX 18 PYTHON ###
-# ENCONTRAR PRIMOS #
+### EX 20 PYTHON ###
+# FATORIAL 2 #
 
-def e_primo(n):
-    for i in range(2, n):
-        if n % i == 0:
-            return False
-    return True
+def fatorial(n):
+    resultado = 1
+    fator = n
+    while fator > 1: 
+        resultado *= fator
+        fator -= 1
+    return resultado
 
-print("-" * 25, "\nBem vindo!\nTente encontrar algum número primo...\n", "-" * 25)
-while True:
-    n = int(input("Digite um valor: "))
-    if e_primo(n) == True:
-        print("Número primo encontrado!")
-        break
+def validacao(n):
+    if n > 16 or n < 1:
+        return False
     else:
-        print("Continue procurando...")
+        return True
+
+while True:
+    valor = int(input('Digite um valor para calcular o fatorial: '))
+    if validacao(valor):
+        print("O fatorial de {} é: {}".format(valor, fatorial(valor)))
+    else:
+        print("Valor inválido! Apenas inteiro positivos menores que 16")
